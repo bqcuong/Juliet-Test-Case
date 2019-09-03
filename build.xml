@@ -1,0 +1,32 @@
+<project default="compile">
+
+    <macrodef name="cwes">
+      <attribute name="target" />
+      <sequential>
+        <subant target="@{target}">
+          <fileset dir="src" includes="*/*/build.xml" />
+          <fileset dir="src" includes="*/*/*/build.xml" />
+        </subant>
+      </sequential>
+    </macrodef>
+
+    <target name="clean">
+      <cwes target="clean" />
+    </target>
+
+    <target name="compile">
+      <cwes target="compile" />
+    </target>
+
+    <target name="war">
+      <cwes target="war" />
+    </target>
+
+    <target name="war_with_libs">
+      <cwes target="war_with_libs" />
+    </target>
+    <target name="jar">
+      <cwes target="jar" />
+    </target>
+
+</project>

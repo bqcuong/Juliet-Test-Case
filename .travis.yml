@@ -1,0 +1,12 @@
+language: java
+
+addons:
+  sonarcloud:
+    organization: "bqcuong"
+    token:
+      secure: "YtuXTKztcxhwcKYrNEjtIwdaQ8swVomopvShh9hbXle3Y41OSORbpWOt+LEsxkVpWASZtBSL/h9PIaBuieiAzcOzVOAcT1exJEEAkzOJk2R/X1pvOex2ju1lHo1xYdNGZFEKSO9UOkVV+K14RYG7xmbuq5n6onKGP57WNgZdDDKdb5IrbjfW5hJnfPf+RCwP/gsBl919OE8CzuDICCnT8VHGHn3T0/VG0lVS3DAYFRTi6VGNY0WqZ0RdprdNps4cBdSMQrqiKu849meKhA0gXq++6yyL/RwROT5eubjcUeeMM12dTVAP10q3tWcu1x1qRmW8wHeDROsf5smSVO4XFmMoc8R3sI/KaX/AeUjTsb2Ao74PEfKMEPg5Dzh+uTV4pc3uhS/nOqVbLnhjvim0XidvR10NGKRKakqAwhGUFIIp/mvXgQGY9+5EL8xF7DxzClxm1wWT5iHmgp1jj1+/43oYtJDg2q2DEiT9pzpocEbQ0bE0M0CePNm+vgU0AuNqUDOwMeLsr6MS5dYRCu03giZ9m/OlSBxaO78ojAk6VuDXhmlGb/Yzgx/CaeGOVTOTBO102KiD3+/qDiVuuULFkeoJ5LK2a924pklEooFGbBJlxw08h0McA7YTTZHLL/zYDaZ+iZ/LgFJqkSCXPc191YbEL32WA+Dcw+t/h9u2knM="
+
+install: true
+
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=bqcuong_Juliet-Test-Suite
